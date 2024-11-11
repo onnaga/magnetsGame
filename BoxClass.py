@@ -93,8 +93,8 @@ class Box :
                         i.MoveRight(hight,width,AllBoxes)
                     elif(self.column <i.column -1) : 
                         i.MoveLeft(hight,width,AllBoxes)
-                    else:
-                        print(f'Move Up function the Same Box : [{self.row},{self.column}]')
+                    # else:
+                    #     print(f'Move Up function the Same Box : [{self.row},{self.column}]')
             return True
         # MOVE THE Purple Magnets
         if(self.type == 'Purple' and moveAnotherBoxes):
@@ -108,8 +108,8 @@ class Box :
                         i.MoveUp(hight,width,AllBoxes)
                     elif(self.row <i.row) : 
                         continue
-                    else:
-                        print(f'Move Up function Purple the Same Box : [{self.row},{self.column}]')
+                    # else:
+                    #     print(f'Move Up function Purple the Same Box : [{self.row},{self.column}]')
 
                     # check the Same ROW 
                 if(i.row == self.row):
@@ -120,8 +120,8 @@ class Box :
                         i.MoveLeft(hight,width,AllBoxes)
                     elif(self.column <i.column ) : 
                         i.MoveRight(hight,width,AllBoxes)
-                    else:
-                        print(f'Move Up function the Same Box : [{self.row},{self.column}]')
+                    # else:
+                    #     print(f'Move Up function the Same Box : [{self.row},{self.column}]')
             return True
 
 
@@ -336,7 +336,7 @@ class Box :
             # if the cell tryng to move to is full 
             if(i.row ==Row and i.column ==Column):
                 print('----------------YOU cant move to this cell-----------------')
-                return True
+                return False
 
         
         # set the new valus
@@ -344,7 +344,7 @@ class Box :
         self.column = Column
 
         # Move the Red magnets 
-        if(self.type == 'Red' ):
+        if(self.type[0] == 'R' ):
             for i in AllBoxes :
                 # check in the Same column
                 if(i.column == self.column):
@@ -367,11 +367,12 @@ class Box :
                         i.MoveRight(hight,width,AllBoxes)
                     elif(self.column <i.column -1) : 
                         i.MoveLeft(hight,width,AllBoxes)
-                    else:
-                        print(f'Move Up function the Same Box : [{self.row},{self.column}]')
+                    # else:
+                    #     print(f'Move Up function the Same Box : [{self.row},{self.column}]')
+            print
             return True
         # MOVE THE Purple Magnets
-        if(self.type == 'Purple' ):
+        if(self.type[0] == 'P' ):
             for i in AllBoxes :
                 # check in the Same column
                 if(i.column == self.column):
@@ -381,7 +382,7 @@ class Box :
                     elif(self.row >i.row):
                         i.MoveUp(hight,width,AllBoxes)
                     elif(self.row <i.row) : 
-                        continue
+                       i.MoveDown(hight,width,AllBoxes)
                     else:
                         print(f'Move Up function Purple the Same Box : [{self.row},{self.column}]')
 
@@ -394,8 +395,8 @@ class Box :
                         i.MoveLeft(hight,width,AllBoxes)
                     elif(self.column <i.column ) : 
                         i.MoveRight(hight,width,AllBoxes)
-                    else:
-                        print(f'Move Up function the Same Box : [{self.row},{self.column}]')
+                    # else:
+                    #     print(f'Move Up function the Same Box : [{self.row},{self.column}]')
             return True
 
 
