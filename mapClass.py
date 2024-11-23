@@ -11,6 +11,7 @@ class map :
         self.viseted =False
         self.hight = hight
         self.width = width
+        self.cost = 1
         self.CreatedFromMove= False
         
         # self.neighbors=set()
@@ -38,7 +39,8 @@ class map :
 
         
     
-
+    def AddCost(self ,cost):
+        self.cost+=cost
     def CountTheHash(self):
         Hash =0
         p=1009
